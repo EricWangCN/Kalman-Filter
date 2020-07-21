@@ -8,13 +8,10 @@ public class Main {
 
         kalmanfilter.initial();
         ArrayList<Integer> list = new ArrayList<Integer>();
-        list.add(-75);
-        list.add(-76);
-        list.add(-81);
-        list.add(-75);
-        list.add(-77);
-        list.add(-76);
-        list.add(-86);
+        for (int i = 0; i < 10; ++i)
+        {
+            list.add((int)(100*Math.cos(2*3.1415926*i/7)));
+        }
 
         int oldvalue = list.get(0);
         ArrayList<Integer> alist = new ArrayList<Integer>();
@@ -23,8 +20,9 @@ public class Main {
             oldvalue = kalmanfilter.KalmanFilter(oldvalue, value);
             alist.add(oldvalue);
         }
-
+        System.out.println("滤波前：");
         System.out.println(list);
+        System.out.println("滤波后：");
         System.out.println(alist);
 
     }

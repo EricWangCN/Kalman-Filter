@@ -33,5 +33,4 @@ public class KalmanFilter {
 
         return estimate;
     }
-
 }
